@@ -87,11 +87,6 @@ const Eventos = () => {
     }
   };
 
-  const handleDelete = (id) => {
-    const updatedEventos = eventos.filter((evento) => evento.id !== id);
-    setEventos(updatedEventos);
-  };
-
   return (
     <Layout>
       <section className="text-center my-8">
@@ -113,13 +108,6 @@ const Eventos = () => {
                 className="block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
                 Reservar
-              </button>
-              {/* Botón para eliminar la reserva */}
-              <button
-                onClick={() => handleDelete(evento.id)}
-                className="block mt-2 text-red-500 hover:text-red-700"
-              >
-                Eliminar
               </button>
             </div>
           </div>
@@ -234,7 +222,6 @@ const Eventos = () => {
               onChange={(e) => handleFileChange(e, setNuevoEvento, nuevoEvento)}
               className="w-full p-2 border border-gray-300 rounded"
               accept=".jpg, .jpeg, .png"
-              required
             />
           </div>
           <button type="submit" className="bg-blue-500 text-white p-2 rounded">Crear Evento</button>
@@ -245,3 +232,5 @@ const Eventos = () => {
 };
 
 export default Eventos;
+
+
